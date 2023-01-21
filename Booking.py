@@ -1,24 +1,18 @@
 import json
-from datetime import datetime as dt
+from datetime import datetime
 
 filename = "./data/Customers.json"
 
 
 class Booking:
-
-    def __init__(self, ArrivalDate, DepartureDate, CustID, RoomID):
-        self.ArrivalDate = ArrivalDate
-        self.DepartureDate = DepartureDate
+    
+    filename = "./data/Customers.json"
+    def __init__(self, CustID, RoomID, ArrivalDate, DepartureDate):
         self.CustID = CustID
         self.RoomID = RoomID
-        #self.total_price = total_price
-
-    def load_data(self, filename="./data/Customers.json"):
-        try:
-            with open(filename, "r") as f:
-                self.temp = json.load(f)
-        except Exception as error:
-            print(f"Couldn't load the file - error {error}")
+        self.ArrivalDate = ArrivalDate
+        self.DepartureDate = DepartureDate
+        self.TotalPrice = 0
 
     def check_customer(self, cust_id):
         self.load_data()
@@ -34,123 +28,142 @@ class Booking:
                 return True
         return False
 
-    def cancel_booking(self, cust_id, room_id):
+    def check_availability(self, room_id, arrival_date, departure_date):
         self.load_data()
+        arrival_date = datetime.strptime(arrival_date, "%d/%m/%Y")
+        departure_date = datetime.strptime(departure_date, "%d/%m/%Y")
         for booking in self.temp["Booking"]:
+            if booking["RoomID"] == room_id and (
+                    arrival_date >= datetime.strptime(booking["ArrivalDate"], "%d/%m/%Y") and
+                    arrival_date <= datetime.strptime(booking["DepartureDate"], "%d/%m/%Y")) or (
+                    departure_date >= datetime.strptime(booking["ArrivalDate"], "%d/%m/%Y") and
+                    departure_date <= datetime.strptime(booking["DepartureDate"], "%d/%m/%Y")):
+                return False
+        nights = (departure_date - arrival_date).days
+        room_type = None
+        for room in self.temp["Rooms"]:
+            if room["id"] == room_id:
+                room_type = room["Type"]
+                break
+        if room_type == "Deluxe":
+            if nights < 2:
+                print("Minimum stay for deluxe room is 2 nights.")
+                return False
+        if room_type == "Suite":
+            if nights < 3:
+                print("Minimum stay for suite room is 3 nights.")
+                return False
+        return True
+
+    def load_data(self, filename="./data/Customers.json"):
+        try:
+            with open(filename, "r") as f:
+                self.temp = json.load(f)
+
+        except Exception as error:
+            print(f"Couldn't load the file - error {error}")
+
+    def set_total_price(self):
+        self.load_data()
+        room = None
+        for r in self.temp["Rooms"]:
+            if r["id"] == self.RoomID:
+                room = r
+                break
+        if room:
+            arrival = datetime.strptime(self.ArrivalDate, "%d/%m/%Y")
+            departure = datetime.strptime(self.DepartureDate, "%d/%m/%Y")
+            nights = (departure - arrival).days
+            self.TotalPrice = nights * room["Price"]
+
+    def add_booking(self):
+
+        if self.check_customer(self.CustID) and self.check_room(self.RoomID) and self.check_availability(self.RoomID,
+                                                                                                         self.ArrivalDate,
+                                                                                                         self.DepartureDate):
+            self.load_data()
+            self.set_total_price()
+            data = {}
+            data["CustID"] = self.CustID
+            data["RoomID"] = self.RoomID
+            data["ArrivalDate"] = self.ArrivalDate
+            data["DepartureDate"] = self.DepartureDate
+            data["TotalPrice"] = self.TotalPrice
+            self.temp["Booking"].append(data)
+            with open(filename, "w") as f:
+                json.dump(self.temp, f, indent=4)
+            print("Booking added successfully.")
+        else:
+            print("Booking failed, please check the customer ID, room ID and availability.")
+
+    @classmethod
+    def cancel_booking(cls, cust_id, room_id):
+        with open(filename, "r") as f:
+            temp = json.load(f)
+        for booking in temp["Booking"]:
             if booking["CustID"] == cust_id and booking["RoomID"] == room_id:
-                self.temp["Booking"].remove(booking)
+                temp["Booking"].remove(booking)
                 with open(filename, "w") as f:
-                    json.dump(self.temp, f, indent=4)
+                    json.dump(temp, f, indent=4)
                 print("Booking canceled successfully.")
                 return
         print("Booking not found.")
 
-    def check_availability(self, room_id, arrival_date, departure_date):
-        self.load_data()
-        for booking in self.temp["Booking"]:
-            if booking["RoomID"] == room_id and (
-                    arrival_date >= booking["ArrivalDate"] and arrival_date <= booking["DepartureDate"]) or (
-                    departure_date >= booking["ArrivalDate"] and departure_date <= booking["DepartureDate"]):
-                return False
-        return True
-
-    def make_booking(self, cust_id, room_id, arrival_date, departure_date, total_price):
-        if self.check_customer(cust_id) and self.check_room(room_id) and self.check_availability(room_id, arrival_date,
-                                                                                                 departure_date):
-            data = {}
-            data["CustID"] = cust_id
-            data["RoomID"] = room_id
-            data["ArrivalDate"] = arrival_date
-            data["DepartureDate"] = departure_date
-            data["TotalPrice"] = self.TotalPrice()
-            self.temp["Booking"].append(data)
-            with open(filename, "w") as f:
-                json.dump(self.temp, f, indent=4)
-            print("Booking successful!")
-        else:
-            print("Booking failed, please check the customer ID, room ID and availability.")
-    # def get_customer_by_id(self, filename="./data/Customers.json",):
-    #     try:
-    #         with open(filename, "r") as f:
-    #             self.temp = json.load(f)
-    #             self.Customers=self.temp["Customers"]
-    #             for customer in self.Customers:
-    #                 if customer["id"] == ID:
-    #                     return customer
-    #                 return None
-
-    # except Exception as error:
-    #     print(f"Couldn't load the file - error {error}")
-
-    def load_Booking(self, filename="./data/Customers.json"):
-        try:
-            with open(filename, "r") as f:
-                self.temp = json.load(f)
-                self.Book = self.temp["Booking"]
-                # self.temp1 = self.temp["Booking"]
-                # print(self.temp)
-                # print(len(self.temp["Customers"]))
-        except Exception as error:
-            print(f"Couldn't load the file - error {error}")
-
     @classmethod
-    def View_All_Booking(cls):
+    def view_bookings(cls):
         with open(filename, "r") as f:
             temp = json.load(f)
-            d = temp["Booking"]
-            # print(d)
-            # data_length = len(temp) - 1
-        for entry in d:
+        for booking in temp["Booking"]:
+            customer_name = None
+            room_type = None
+            for customer in temp["Customers"]:
+                if customer["ID"] == booking["CustID"]:
+                    customer_name = customer["Name"]
+                    break
+            for room in temp["Rooms"]:
+                if room["id"] == booking["RoomID"]:
+                    room_type = room["Type"]
+                    break
+            print(f"Booking for customer {customer_name} in room type {room_type}")
+            print(f"Arrival Date: {booking['ArrivalDate']}")
 
-            CustID = entry["CustID"]
-            RoomID = entry["RoomID"]
-            ArrivalDate = entry["ArrivalDate"]
-            DepartureDate = entry["DepartureDate"]
-            TotalPrice = entry["TotalPrice"]
-            print(f"Room Number {RoomID}")
-            print(f"Customer ID is : {CustID}")
-            print(f"ArrivalDate is: {ArrivalDate}")
-            print(f"DepartureDate is  : {DepartureDate}")
-            print(f"TotalPrice is  : {TotalPrice}")
-            print("\n\n")
-            # list(filter(None, entry))
-
-        else:
-            pass
-
-    # def display_booked_rooms_for_date(bookings, date):
-
-    def Book_Room(self):
-        data = {}
-        with open(filename, 'r', encoding='utf-8') as f:
+    @classmethod
+    def BookedRoomsSpecificDate(cls, date):
+        with open(filename, "r") as f:
             temp = json.load(f)
-        # data1 = temp['Rooms']
-        # print(data)
-        data["CustID"] = self.CustID
-        data["RoomNumber"] = self.RoomID
-        data["ArrivalTime"] = self.ArrivalDate
-        data["DepartureDate"] = self.DepartureDate
-        data["TotalPrice"] = self.TotalPrice()
-        if  temp["Rooms"]["id"]==self.RoomID:
-            temp["Rooms"]["Price"] = self.price
+        for booking in temp["Booking"]:
+            customer_name = None
+            room_type = None
+            if booking["ArrivalDate"] == date:
+                for customer in temp["Customers"]:
+                    if customer["ID"] == booking["CustID"]:
+                        customer_name = customer["Name"]
+                        break
+                for room in temp["Rooms"]:
+                    if room["id"] == booking["RoomID"]:
+                        room_type = room["Type"]
+                        break
+                print(f"Booking for customer {customer_name} in room type {room_type}")
+                print(f"Arrival Date: {booking['ArrivalDate']}")
+            else:
+                print(f"there is no reservetions for {date}")
 
-        temp["Booking"].append(data)
-        with open(filename, "w") as f:
-            json.dump(temp, f, indent=4)
-
-    def TotalDays(self):
-        print("hh")
-        self.TotalDays = (dt.strptime(self.DepartureDate, "%d/%m/%Y") - dt.strptime(self.ArrivalDate, "%d/%m/%Y")).days
-        print(self.TotalDays)
-
-    def TotalPrice(self):
-        self.TotalPrice = self.price * self.TotalDays
-        return self.TotalPrice
-
-    def __str__(self):
-        return f"the total days is{self.TotalDays} and the price is{self.TotalPrice1}"
-
-book = Booking('15/10/2023', '20/2/2023',1,1)
-#print(#datetime.utcnow())
-book.make_booking()
-# book.TotalDays1()
+    @classmethod
+    def AvailableroomsSpecificDate(cls, date):
+        with open(filename, "r") as f:
+            temp = json.load(f)
+        available_rooms = []
+        for room in temp["Rooms"]:
+            room_id = room["id"]
+            room_available = True
+            for booking in temp["Booking"]:
+                if booking["RoomID"] == room_id:
+                    if (datetime.strptime(date, "%d/%m/%Y") >= datetime.strptime(booking["ArrivalDate"],
+                                                                                          "%d/%m/%Y")) and (
+                            datetime.strptime(date, "%d/%m/%Y") <= datetime.strptime(booking["DepartureDate"],
+                                                                                              "%d/%m/%Y")):
+                        room_available = False
+                        break
+            if room_available:
+                available_rooms.append(room_id)
+        print(len(available_rooms))
