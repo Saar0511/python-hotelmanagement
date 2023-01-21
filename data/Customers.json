@@ -1,0 +1,479 @@
+{
+    "Customers": [
+        {
+            "ID": 1,
+            "Name": "almog",
+            "Address": "sdaf",
+            "City": "asdf",
+            "Email": "asdf",
+            "Age": 33
+        },
+        {
+            "ID": 2,
+            "Name": "sdf",
+            "Address": "sdaf",
+            "City": "sadf",
+            "Email": "dsf",
+            "Age": 33
+        },
+        {
+            "Name": "'h",
+            "Address": "h",
+            "City": "hh",
+            "Email": "h",
+            "Age": "h",
+            "ID": 2
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 3
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 4
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 5
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 6
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 7
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 8
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 9
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 10
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 11
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 12
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 13
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 14
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 15
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 16
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 17
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 18
+        },
+        {
+            "Name": "sdfar",
+            "Address": "ef",
+            "City": "asf",
+            "Email": "esfsae",
+            "Age": "esf",
+            "ID": 19
+        },
+        {
+            "Name": "sdfar",
+            "Address": "ef",
+            "City": "asf",
+            "Email": "esfsae",
+            "Age": "esf",
+            "ID": 20
+        },
+        {
+            "Name": "almog",
+            "Address": "sdf",
+            "City": "dsfsd",
+            "Email": "fse",
+            "Age": "sfaf",
+            "ID": 21
+        }
+    ],
+    "Rooms": [
+        {
+            "id": 1,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 2,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 3,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 4,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 5,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 6,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 7,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 8,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 9,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 10,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 11,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 12,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 13,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 14,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 15,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 16,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 17,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 18,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 19,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 20,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 21,
+            "Size": "30mr",
+            "Capacity": 10,
+            "NumberOfBeds": 4,
+            "Type": "Suite",
+            "Price": 300
+        },
+        {
+            "id": 22,
+            "Size": "30mr",
+            "Capacity": 10,
+            "NumberOfBeds": 4,
+            "Type": "Suite",
+            "Price": 300
+        },
+        {
+            "id": 23,
+            "Size": "30mr",
+            "Capacity": 10,
+            "NumberOfBeds": 4,
+            "Type": "Suite",
+            "Price": 300
+        },
+        {
+            "id": 24,
+            "Size": "30mr",
+            "Capacity": 10,
+            "NumberOfBeds": 4,
+            "Type": "Suite",
+            "Price": 300
+        },
+        {
+            "id": 25,
+            "Size": "30mr",
+            "Capacity": 10,
+            "NumberOfBeds": 4,
+            "Type": "Suite",
+            "Price": 300
+        },
+        {
+            "id": 26,
+            "Size": "30mr",
+            "Capacity": 10,
+            "NumberOfBeds": 4,
+            "Type": "Suite",
+            "Price": 300
+        },
+        {
+            "id": 27,
+            "Size": "30mr",
+            "Capacity": 10,
+            "NumberOfBeds": 4,
+            "Type": "Suite",
+            "Price": 300
+        },
+        {
+            "id": 28,
+            "Size": "30mr",
+            "Capacity": 10,
+            "NumberOfBeds": 4,
+            "Type": "Suite",
+            "Price": 300
+        },
+        {
+            "id": 29,
+            "Size": "30mr",
+            "Capacity": 10,
+            "NumberOfBeds": 4,
+            "Type": "Suite",
+            "Price": 300
+        },
+        {
+            "id": 30,
+            "Size": "30mr",
+            "Capacity": 10,
+            "NumberOfBeds": 4,
+            "Type": "Suite",
+            "Price": 300
+        },
+        {
+            "id": 31,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 32,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 33,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 34,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 35,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 36,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        }
+    ],
+    "Booking": [
+        {
+            "CustID": 10,
+            "RoomID": 12,
+            "ArrivalDate": "20/10/2023",
+            "DepartureDate": "25/10/2023",
+            "TotalPrice": 1000
+        }
+    ]
+}
