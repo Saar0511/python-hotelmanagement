@@ -1,36 +1,172 @@
 {
     "Customers": [
         {
-            "Name": "Jane Doe",
-            "Address": "456 Park Ave",
-            "City": "Anycity",
-            "Email": "janedoe@example.com",
-            "Age": 25,
-            "ID": 1
+            "ID": 1,
+            "Name": "almog",
+            "Address": "sdaf",
+            "City": "asdf",
+            "Email": "asdf",
+            "Age": 33
         },
         {
-            "Name": "Jane Doe",
-            "Address": "456 Park Ave",
-            "City": "Anycity",
-            "Email": "janedoe@example.com",
-            "Age": 25,
+            "Name": "'h",
+            "Address": "h",
+            "City": "hh",
+            "Email": "h",
+            "Age": "h",
             "ID": 2
         },
         {
-            "Name": "Jane Doe",
-            "Address": "456 Park Ave",
-            "City": "Anycity",
-            "Email": "janedoe@example.com",
-            "Age": 25,
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
             "ID": 3
         },
         {
-            "Name": "Jane Doe",
-            "Address": "456 Park Ave",
-            "City": "Anycity",
-            "Email": "janedoe@example.com",
-            "Age": 25,
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
             "ID": 4
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 5
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 6
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 7
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 8
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 9
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 10
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 11
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 12
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 13
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 14
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 15
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 16
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 17
+        },
+        {
+            "Name": "sd",
+            "Address": "ads",
+            "City": "asd",
+            "Email": "sad",
+            "Age": "asd",
+            "ID": 18
+        },
+        {
+            "Name": "sdfar",
+            "Address": "ef",
+            "City": "asf",
+            "Email": "esfsae",
+            "Age": "esf",
+            "ID": 19
+        },
+        {
+            "Name": "sdfar",
+            "Address": "ef",
+            "City": "asf",
+            "Email": "esfsae",
+            "Age": "esf",
+            "ID": 20
+        },
+        {
+            "Name": "almog",
+            "Address": "sdf",
+            "City": "dsfsd",
+            "Email": "fse",
+            "Age": "sfaf",
+            "ID": 21
         }
     ],
     "Rooms": [
@@ -305,22 +441,39 @@
             "NumberOfBeds": 2,
             "Type": "Basic",
             "Price": 100
+        },
+        {
+            "id": 35,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 36,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 37,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
         }
     ],
     "Booking": [
         {
-            "CustID": 10,
-            "RoomID": 12,
-            "ArrivalDate": "20/10/2023",
-            "DepartureDate": "25/10/2023",
-            "TotalPrice": 1000
-        },
-        {
             "CustID": 1,
             "RoomID": 1,
-            "ArrivalDate": "01/01/2021",
-            "DepartureDate": "05/01/2021",
-            "TotalPrice": 400
+            "ArrivalDate": "2022-01-04",
+            "DepartureDate": "2022-01-11",
+            "TotalPrice": 700
         }
     ]
 }
