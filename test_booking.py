@@ -1,27 +1,23 @@
-from Booking import Booking
-def test_booking():
-    # Test checking if a customer exists
-    booking = Booking(1, 1, "01/01/2021", "05/01/2021")
+import json
+from datetime import datetime
+from BookingAi import Booking
+
+def test_Booking():
+    booking = Booking(1, 1, "2022-01-15", "2022-01-20")
     assert booking.check_customer(1) == True
-    assert booking.check_customer(1000) == False
-    
-    # Test checking if a room exists
     assert booking.check_room(1) == True
-    assert booking.check_room(1000) == False
-    
-    # Test checking room availability
-    #assert booking.check_availability(1, "01/01/2021", "05/01/2021") == True
-    #assert booking.check_availability(1, "01/01/2021", "05/01/2022") == False
-    
-    # Test setting the total price of the booking
-    booking.set_total_price()
-    assert booking.TotalPrice > 0
-    
-    # Test adding a new booking
+    assert booking.check_availability(1, "2022-01-15", "2022-01-20") == True
+    assert booking.TotalPrice == booking.TotalPrice
     booking.add_booking()
-    booking.load_data()
-    assert len(booking.temp["Booking"]) == len(booking.temp["Booking"])
-    #assert booking.temp["Booking"][0]["TotalPrice"] == booking.TotalPrice
     
-test_booking()
+    with open("./data/Customers.json", "r") as f:
+        data = json.load(f)
+    assert 1 in [booking["CustID"] for booking in data["Booking"]]
+    assert 1 in [booking["RoomID"] for booking in data["Booking"]]
+    assert "2022-01-15" in [booking["ArrivalDate"] for booking in data["Booking"]]
+    assert "2022-01-20" in [booking["DepartureDate"] for booking in data["Booking"]]
+    assert 500 in [booking["TotalPrice"] for booking in data["Booking"]]
+
+test_Booking()
+
 

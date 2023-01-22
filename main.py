@@ -38,7 +38,7 @@ please Choose One Of Our Options:
         Capacity=10
         NumberOfBeds=2
         Price=100
-        BasicRoom=Room(Type,size,Capacity,NumberOfBeds,Price)
+        BasicRoom=Rooms(Type,size,Capacity,NumberOfBeds,Price)
         BasicRoom.interduction()
     elif Type == 2:
         Type = "Deluxe"

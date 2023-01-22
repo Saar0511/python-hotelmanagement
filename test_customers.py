@@ -1,5 +1,5 @@
 import json
-from customers import Customers
+from customers1 import Customers
 filename = "./data/Customers.json"
 
 def test_customers():
