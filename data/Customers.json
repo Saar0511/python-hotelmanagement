@@ -169,6 +169,14 @@
             "ID": 21
         },
         {
+            "Name": "almog",
+            "Address": "fes",
+            "City": "df",
+            "Email": "df",
+            "Age": "df",
+            "ID": 20
+        },
+        {
             "Name": "asd",
             "Address": "asd",
             "City": "asd",
@@ -425,9 +433,31 @@
             "NumberOfBeds": 4,
             "Type": "Suite",
             "Price": 300
+        },
+        {
+            "id": 31,
+            "Size": "22mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Basic",
+            "Price": 100
+        },
+        {
+            "id": 32,
+            "Size": "26mr",
+            "Capacity": 10,
+            "NumberOfBeds": 2,
+            "Type": "Deluxe",
+            "Price": 200
+        },
+        {
+            "id": 33,
+            "Size": "30mr",
+            "Capacity": 10,
+            "NumberOfBeds": 4,
+            "Type": "Suite",
+            "Price": 300
         }
     ],
-    "Booking": [
-
-    ]
+    "Booking": []
 }

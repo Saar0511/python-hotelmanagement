@@ -37,7 +37,27 @@ class TestRooms(unittest.TestCase):
 
 
     def test_room_by_type(self):
-        Rooms.RoomByType()
+        selectType=input("select Type")
+        Room=Rooms.RoomByType(selectType)
+        if Room != False:
+            for R in Room:
+                ID = R[0]
+                Size = R[1]
+                Capacity = R[2]
+                NumberOfBeds = R[3]
+                Type = R[4]
+                Price = R[5]
+                print(f"Room Number Is: {ID}")
+                print(f"Room Size Is: {Size}")
+                print(f"Room Capacity Is: {Capacity}")
+                print(f"Room NumberOfBeds Is: {NumberOfBeds}")
+                print(f"Room Type Is : {Type}")
+                print(f"Room Price Is: {Price}")
+                print("")
+
+        else:
+            print(f"Room Not Exist!")
+
 
 
 if __name__ == '__main__':

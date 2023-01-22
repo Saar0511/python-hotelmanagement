@@ -16,7 +16,7 @@ class MainApplication(tk.Frame):
         self.master = master
         self.grid()
         self.create_widgets()
-        self.master.title("Almog & Saar Hotel")
+        self.master.title("Almog And Saar Hotel")
 
     def display_Available_Rooms_By_Date_pop_up(self):
         book_room = tk.Toplevel()
@@ -40,7 +40,7 @@ class MainApplication(tk.Frame):
     def display_Available_Rooms_By_Date(self, displayRoom, ArrivalDate):
         view_bookings_window = tk.Toplevel(self.master)
         view_bookings_window.title(f"All Booking That Available for{ArrivalDate}")
-        view_bookings_window.geometry("800x600")
+        view_bookings_window.geometry("300x600")
         view_bookings_window.config()
 
         Book = Booking.AvailableroomsSpecificDate((ArrivalDate))
@@ -57,7 +57,6 @@ class MainApplication(tk.Frame):
         scrollbar.pack(side=RIGHT, fill=Y)
         scrollbar.config(command=room_list.yview)
         room_list.config(yscrollcommand=scrollbar.set)
-        print(Book)
         if Book != False:
             for B in Book:
                 Number_Of_Room = B
@@ -68,19 +67,6 @@ class MainApplication(tk.Frame):
             displayRoom.destroy()
         else:
             room_list.insert(tk.END, f"there is no Room Available In :{ArrivalDate}")
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     def display_Booked_Rooms_By_Date_pop_up(self):
         book_room = tk.Toplevel()
@@ -103,7 +89,7 @@ class MainApplication(tk.Frame):
     def display_Booked_Rooms_By_Date(self,displayRoom,ArrivalDate):
         view_bookings_window = tk.Toplevel(self.master)
         view_bookings_window.title(f"All Booking for{ArrivalDate}")
-        view_bookings_window.geometry("800x600")
+        view_bookings_window.geometry("300x600")
         view_bookings_window.config()
 
         Book=Booking.BookedRoomsSpecificDate(str(ArrivalDate))
@@ -120,7 +106,6 @@ class MainApplication(tk.Frame):
         scrollbar.pack(side=RIGHT, fill=Y)
         scrollbar.config(command=room_list.yview)
         room_list.config(yscrollcommand=scrollbar.set)
-        print(Book)
         if Book != False:
             for B in Book:
                 name = B[0]
@@ -137,55 +122,55 @@ class MainApplication(tk.Frame):
 
 
     def create_widgets(self):
-        self.add_room_button = tk.Button(self, text="1. Add a new room", command=self.add_room_popup)
-        self.add_room_button.grid(row=0, column=0)
+        self.add_room_button = tk.Button(self, text="1. Add a new room", command=self.add_room_popup, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.add_room_button.grid(row=0, column=0, padx=5, pady=5)
 
-        self.add_customer_button = tk.Button(self, text="2. Add a new customer", command=self.add_customer_popup)
-        self.add_customer_button.grid(row=1, column=0)
+        self.add_customer_button = tk.Button(self, text="2. Add a new customer", command=self.add_customer_popup, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.add_customer_button.grid(row=1, column=0, padx=5, pady=5)
 
-        self.book_room_button = tk.Button(self, text="3. Book a room", command=self.book_room_popup)
-        self.book_room_button.grid(row=2, column=0)
+        self.book_room_button = tk.Button(self, text="3. Book a room", command=self.book_room_popup, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.book_room_button.grid(row=2, column=0, padx=5, pady=5)
 
-        self.cancel_booking_button = tk.Button(self, text="4. Cancel booking", command=self.cancel_booking_popup)
-        self.cancel_booking_button.grid(row=3, column=0)
+        self.cancel_booking_button = tk.Button(self, text="4. Cancel booking", command=self.cancel_booking_popup, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.cancel_booking_button.grid(row=3, column=0, padx=5, pady=5)
 
-        self.display_rooms_button = tk.Button(self, text="5. Display all rooms", command=self.display_all_rooms_popup)
-        self.display_rooms_button.grid(row=4, column=0)
+        self.display_rooms_button = tk.Button(self, text="5. Display all rooms", command=self.display_all_rooms_popup, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.display_rooms_button.grid(row=4, column=0, padx=5, pady=5)
 
         self.display_customers_button = tk.Button(self, text="6. Display all customers",
-                                                  command=self.display_all_customers_popup)
-        self.display_customers_button.grid(row=5, column=0)
+                                                  command=self.display_all_customers_popup, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.display_customers_button.grid(row=5, column=0, padx=5, pady=5)
 
         self.display_bookings_button = tk.Button(self, text="7. Display all bookings",
-                                                 command=self.display_all_bookings)
-        self.display_bookings_button.grid(row=6, column=0)
+                                                 command=self.display_all_bookings, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.display_bookings_button.grid(row=6, column=0, padx=5, pady=5)
 
         self.display_booked_rooms_button = tk.Button(self, text="8. Display booked rooms for a specific date",
-                                                     command=self.display_Booked_Rooms_By_Date_pop_up)
-        self.display_booked_rooms_button.grid(row=7, column=0)
+                                                     command=self.display_Booked_Rooms_By_Date_pop_up, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.display_booked_rooms_button.grid(row=7, column=0, padx=5, pady=5)
 
         self.display_available_rooms_button = tk.Button(self, text="9. Display available rooms for a specific date",
-                                                        command=self.display_Available_Rooms_By_Date_pop_up)
-        self.display_available_rooms_button.grid(row=8, column=0)
+                                                        command=self.display_Available_Rooms_By_Date_pop_up, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.display_available_rooms_button.grid(row=8, column=0, padx=5, pady=5)
 
-        self.find_room_by_type_button = tk.Button(self, text="10. Find room by type", command="")
-        self.find_room_by_type_button.grid(row=9, column=0)
+        self.find_room_by_type_button = tk.Button(self, text="10. Find room by type", command=self.find_room_by_Type_popup, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.find_room_by_type_button.grid(row=9, column=0, padx=5, pady=5)
 
         self.find_room_by_number_button = tk.Button(self, text="11. Find room by number",
-                                                    command=self.find_room_by_number_popup)
-        self.find_room_by_number_button.grid(row=9, column=0)
+                                                    command=self.find_room_by_number_popup, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.find_room_by_number_button.grid(row=10, column=0, padx=5, pady=5)
         self.find_customer_by_name_button = tk.Button(self, text="12. Find customer by name",
-                                                      command=self.find_customer_by_name)
-        self.find_customer_by_name_button.grid(row=10, column=0)
+                                                      command=self.find_customer_by_name, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.find_customer_by_name_button.grid(row=11, column=0, padx=5, pady=5)
 
-        self.remove_room_button = tk.Button(self, text="13. Remove room", command=self.remove_room)
-        self.remove_room_button.grid(row=11, column=0)
+        self.remove_room_button = tk.Button(self, text="13. Remove room", command=self.remove_room, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.remove_room_button.grid(row=12, column=0, padx=5, pady=5)
 
-        self.remove_customer_button = tk.Button(self, text="14. Remove customer", command=self.remove_customer)
-        self.remove_customer_button.grid(row=12, column=0)
+        self.remove_customer_button = tk.Button(self, text="14. Remove customer", command=self.remove_customer, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.remove_customer_button.grid(row=13, column=0, padx=5, pady=5)
 
-        self.exit_button = tk.Button(self, text="15. Exit", command=self.master.quit)
-        self.exit_button.grid(row=13, column=0)
+        self.exit_button = tk.Button(self, text="15. Exit", command=self.master.quit, bg='#34eb7a', fg='black', font=('Arial', 12, 'bold'))
+        self.exit_button.grid(row=14, column=0, padx=5, pady=5)
 
     def add_room_popup(self):
         popup = tk.Toplevel(self)
@@ -274,7 +259,7 @@ class MainApplication(tk.Frame):
 
         Age_entry = tk.Entry(popup)
         Age_entry.grid(row=5, column=1)
-        print(Customer_var.get())
+
         add_button = tk.Button(popup, text="Add",
                                command=lambda: self.add_customer(popup, Name_entry.get(), Address_entry.get(),
                                                                  City_entry.get(), Email_entry.get(), Age_entry.get()))
@@ -285,13 +270,13 @@ class MainApplication(tk.Frame):
     def display_all_rooms_popup(self):
         view_bookings_window = tk.Toplevel(self.master)
         view_bookings_window.title("All Rooms")
-        view_bookings_window.geometry("800x600")
+        view_bookings_window.geometry("300x600")
         view_bookings_window.config(bg="white")
 
         Room = Rooms.display_All_Rooms()
 
         # Create a Listbox widget to hold the room information
-        room_list = tk.Listbox(view_bookings_window, width=600, height=800)
+        room_list = tk.Listbox(view_bookings_window, width=400, height=800)
         room_list.grid(row=4, column=3)
         room_list.config(justify=tk.CENTER)
         room_list.pack(side=TOP)
@@ -397,7 +382,7 @@ class MainApplication(tk.Frame):
     def display_all_customers_popup(self):
         view_bookings_window = tk.Toplevel(self.master)
         view_bookings_window.title("All Customers")
-        view_bookings_window.geometry("800x600")
+        view_bookings_window.geometry("300x600")
         view_bookings_window.config()
 
         Cust = Customers.display_All_Customers()
@@ -433,7 +418,7 @@ class MainApplication(tk.Frame):
     def display_all_bookings(self):
         view_bookings_window = tk.Toplevel(self.master)
         view_bookings_window.title("All Bookings")
-        view_bookings_window.geometry("800x600")
+        view_bookings_window.geometry("300x600")
         view_bookings_window.config(bg="white")
 
         Book = Booking.view_bookings()
@@ -480,6 +465,87 @@ class MainApplication(tk.Frame):
                                                                          room_number_entry.get()))
         find_button.pack()
 
+    def find_room_by_Type_popup(self):
+        popup = tk.Toplevel(self)
+        popup.title("Add a new room")
+
+        room_type_label = tk.Label(popup, text="Room Type:")
+        room_type_label.grid(row=0, column=0)
+        popup.geometry("200x50")
+        room_type_var = tk.StringVar(popup)
+        room_type_var.set("Basic")
+        room_type_dropdown = tk.OptionMenu(popup, room_type_var, "Basic", "Deluxe", "Suite")
+        room_type_dropdown.grid(row=0, column=1)
+
+        add_button = tk.Button(popup, text="Find",
+                               command=lambda: self.find_room_by_Type(popup, room_type_var.get()))
+        add_button.grid(row=5, column=1)
+        # find_room_by_number_window = tk.Toplevel()
+        # find_room_by_number_window.title("Find Room by Type")
+        # find_room_by_number_window.geometry("300x200")
+        # find_room_by_number_window.config()
+        #
+        # room_number_label = tk.Label(find_room_by_number_window, text="Enter Room Type: ")
+        # room_number_label.pack()
+        # room_number_entry = tk.Entry(find_room_by_number_window)
+        # room_number_entry.pack()
+        #
+        # find_button = tk.Button(find_room_by_number_window, text="Find Room",
+        #                         command=lambda: self.find_room_by_Type(find_room_by_number_window,
+        #                                                                  room_number_entry.get()))
+        # find_button.pack()
+
+    def find_room_by_Type(self,find_room_by_number_window,room_Type):
+        view_bookings_window = tk.Toplevel(self.master)
+        view_bookings_window.title("Customer By Name")
+        view_bookings_window.geometry("300x600")
+        view_bookings_window.config(bg="white")
+
+        Room = Rooms.RoomByType(str(room_Type))
+
+        # Create a Listbox widget to hold the room information
+        room_list = tk.Listbox(view_bookings_window, width=600, height=800)
+        room_list.grid(row=4, column=3)
+        room_list.config(justify=tk.CENTER)
+        room_list.pack(side=TOP)
+        # room_list.insert(tk.END, "")
+
+        # Create a Scrollbar widget and connect it to the Listbox
+        scrollbar = tk.Scrollbar(view_bookings_window)
+        scrollbar.pack(side=RIGHT, fill=Y)
+        scrollbar.config(command=room_list.yview)
+        room_list.config(yscrollcommand=scrollbar.set)
+        if Room != False:
+            for R in Room:
+                ID = R[0]
+                Size = R[1]
+                Capacity = R[2]
+                NumberOfBeds = R[3]
+                Type = R[4]
+                Price = R[5]
+                room_list.insert(tk.END, f"Room Number Is: {ID}")
+                room_list.insert(tk.END, f"Room Size Is: {Size}")
+                room_list.insert(tk.END, f"Room Capacity Is: {Capacity}")
+                room_list.insert(tk.END, f"Room NumberOfBeds Is: {NumberOfBeds}")
+                room_list.insert(tk.END, f"Room Type Is : {Type}")
+                room_list.insert(tk.END, f"Room Price Is: {Price}")
+                room_list.insert(tk.END, "")
+
+        else:
+            room_list.insert(tk.END, f"Room Not Exist!")
+
+
+
+
+
+
+
+
+
+
+
+
+
     def find_room_by_number(self, find_room_by_number_window, room_number):
         room = Rooms.RoomByNumber(room_number)
         if room != "Room not found":
@@ -521,7 +587,7 @@ class MainApplication(tk.Frame):
     def display_customer_by_name(self, find_name_window, name):
         view_bookings_window = tk.Toplevel(self.master)
         view_bookings_window.title("Customer By Name")
-        view_bookings_window.geometry("800x600")
+        view_bookings_window.geometry("300x600")
         view_bookings_window.config(bg="white")
 
         Book = Customers.Cust_by_name(str(name))
@@ -538,7 +604,6 @@ class MainApplication(tk.Frame):
         scrollbar.pack(side=RIGHT, fill=Y)
         scrollbar.config(command=room_list.yview)
         room_list.config(yscrollcommand=scrollbar.set)
-        print(Book)
         if Book != False:
             for R in Book:
                 name = R[0]

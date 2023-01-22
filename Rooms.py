@@ -78,37 +78,32 @@ class Rooms:
     #         json.dump(self.temp, f, indent=4)
 
     @classmethod
-    def RoomByType(cls, filename="./data/Customers.json"):
+    def RoomByType(cls,room_type, filename="./data/Customers.json"):
         # self.Display_All()
         # new_data = []
-
         with open(filename, "r") as f:
             temp = json.load(f)
             d = temp["Rooms"]
+        rooms_list=[]
             # print(d)
             # data_length = len(temp) - 1
-        room_type = input("Enter room type (Basic, Deluxe, Suite): ")
-        delete_option = room_type
+
         for entry in d:
 
-            if entry["Type"] == str(delete_option):
+            if entry["Type"] == str(room_type):
                 ID = entry["id"]
                 Size = entry["Size"]
                 Capacity = entry["Capacity"]
                 NumberOfBeds = entry["NumberOfBeds"]
                 Type = entry["Type"]
                 Price = entry["Price"]
-                print(f"Room Number {ID}")
-                print(f"Size of The Room  : {Size}")
-                print(f"Capacity of Rom: {Capacity}")
-                print(f"NumberOfBeds in the Room  : {NumberOfBeds}")
-                print(f"Type of the room  : {Type}")
-                print(f"Price of the Room  : {Price}")
-                print("\n\n")
-            # list(filter(None, entry))
+                rooms_list.append((ID, Size, Capacity, NumberOfBeds, Type, Price))
 
-            else:
-                pass
+            # list(filter(None, entry)
+        if len(rooms_list)>0:
+            return rooms_list
+        else:
+            return False
 
     @classmethod
     def RoomByNumber(cls, room_number, filename="./data/Customers.json"):
