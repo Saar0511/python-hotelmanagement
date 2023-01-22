@@ -31,13 +31,6 @@ class Booking:
         self.load_data()
         arrival_date = datetime.strptime(arrival_date, "%Y-%m-%d")
         departure_date = datetime.strptime(departure_date, "%Y-%m-%d")
-        for booking in self.temp["Booking"]:
-            if booking["RoomID"] == room_id and (
-                    arrival_date >= datetime.strptime(booking["ArrivalDate"], "%Y-%m-%d") and
-                    arrival_date <= datetime.strptime(booking["DepartureDate"], "%Y-%m-%d")) or (
-                    departure_date >= datetime.strptime(booking["ArrivalDate"], "%Y-%m-%d") and
-                    departure_date <= datetime.strptime(booking["DepartureDate"], "%Y-%m-%d")):
-                return False
         nights = (departure_date - arrival_date).days
         room_type = None
         for room in self.temp["Rooms"]:
@@ -51,6 +44,19 @@ class Booking:
         if room_type == "Suite":
             if nights < 3:
                 print("Minimum stay for suite room is 3 nights.")
+                return False
+        for booking in self.temp["Booking"]:
+            if booking["RoomID"] == room_id and (
+                    (arrival_date >= datetime.strptime(booking["ArrivalDate"],
+                                                       "%Y-%m-%d") and arrival_date <= datetime.strptime(
+                        booking["DepartureDate"], "%Y-%m-%d")) or (
+                            departure_date >= datetime.strptime(booking["ArrivalDate"],
+                                                                "%Y-%m-%d") and departure_date <= datetime.strptime(
+                        booking["DepartureDate"], "%Y-%m-%d")) or (
+                            arrival_date <= datetime.strptime(booking["ArrivalDate"],
+                                                              "%Y-%m-%d") and departure_date >= datetime.strptime(
+                        booking["DepartureDate"], "%Y-%m-%d"))
+            ):
                 return False
         return True
 
@@ -78,8 +84,8 @@ class Booking:
     def add_booking(self):
 
         if self.check_customer(self.CustID) and self.check_room(self.RoomID) and self.check_availability(self.RoomID,
-                                                                                                         self.ArrivalDate,
-                                                                                                         self.DepartureDate):
+                                                                                         self.ArrivalDate,
+                                                                                                    self.DepartureDate):
             self.load_data()
             self.set_total_price()
             data = {}
@@ -92,8 +98,10 @@ class Booking:
             with open(filename, "w") as f:
                 json.dump(self.temp, f, indent=4)
             print("Booking added successfully.")
+            return True
         else:
             print("Booking failed, please check the customer ID, room ID and availability.")
+            return False
 
     @classmethod
     def cancel_booking(cls, cust_id):
@@ -148,13 +156,15 @@ class Booking:
                         room_type = room["Type"]
                         break
                 list.append((customer_name, room_type, booking['ArrivalDate']))
+                return list
 
             else:
                 # except Exception as error:
                 # print(f"Couldn't load the file - error {error}")
                 print(f"there is no reservetions for {date}")
+                return False
 
-        return list
+        #return list
 
     @classmethod
     def AvailableroomsSpecificDate(cls, date):
@@ -173,7 +183,10 @@ class Booking:
                         room_available = False
                         break
             if room_available:
-                available_rooms.append(room_id)
+                available_rooms.append(f"{room_id}")
+        if not available_rooms:
+            return False
+        return available_rooms
         # print(len(available_rooms))
 
         # print(f"Arrival Date: {booking['ArrivalDate']}")

@@ -1,15 +1,15 @@
 {
     "Customers": [
         {
-            "ID": 1,
             "Name": "almog",
-            "Address": "sdaf",
-            "City": "asdf",
-            "Email": "asdf",
-            "Age": 33
+            "Address": "h",
+            "City": "hh",
+            "Email": "h",
+            "Age": "h",
+            "ID": 1
         },
         {
-            "Name": "'h",
+            "Name": "h",
             "Address": "h",
             "City": "hh",
             "Email": "h",
@@ -161,20 +161,28 @@
             "ID": 20
         },
         {
-            "Name": "almog",
-            "Address": "sdf",
-            "City": "dsfsd",
-            "Email": "fse",
-            "Age": "sfaf",
+            "Name": "",
+            "Address": "",
+            "City": "",
+            "Email": "",
+            "Age": "",
             "ID": 21
         },
         {
-            "Name": "Jane Doe",
-            "Address": "456 Park Ave",
-            "City": "Anycity",
-            "Email": "janedoe@example.com",
-            "Age": 25,
+            "Name": "asd",
+            "Address": "asd",
+            "City": "asd",
+            "Email": "asf",
+            "Age": "afsa",
             "ID": 21
+        },
+        {
+            "Name": "saar",
+            "Address": "bear",
+            "City": "natanya",
+            "Email": "saar0511@gmail.com",
+            "Age": "44",
+            "ID": 22
         }
     ],
     "Rooms": [
@@ -417,71 +425,9 @@
             "NumberOfBeds": 4,
             "Type": "Suite",
             "Price": 300
-        },
-        {
-            "id": 31,
-            "Size": "22mr",
-            "Capacity": 10,
-            "NumberOfBeds": 2,
-            "Type": "Basic",
-            "Price": 100
-        },
-        {
-            "id": 32,
-            "Size": "22mr",
-            "Capacity": 10,
-            "NumberOfBeds": 2,
-            "Type": "Basic",
-            "Price": 100
-        },
-        {
-            "id": 33,
-            "Size": "22mr",
-            "Capacity": 10,
-            "NumberOfBeds": 2,
-            "Type": "Basic",
-            "Price": 100
-        },
-        {
-            "id": 34,
-            "Size": "22mr",
-            "Capacity": 10,
-            "NumberOfBeds": 2,
-            "Type": "Basic",
-            "Price": 100
-        },
-        {
-            "id": 35,
-            "Size": "22mr",
-            "Capacity": 10,
-            "NumberOfBeds": 2,
-            "Type": "Basic",
-            "Price": 100
-        },
-        {
-            "id": 36,
-            "Size": "26mr",
-            "Capacity": 10,
-            "NumberOfBeds": 2,
-            "Type": "Deluxe",
-            "Price": 200
-        },
-        {
-            "id": 37,
-            "Size": "22mr",
-            "Capacity": 10,
-            "NumberOfBeds": 2,
-            "Type": "Basic",
-            "Price": 100
         }
     ],
     "Booking": [
-        {
-            "CustID": 1,
-            "RoomID": 1,
-            "ArrivalDate": "2022-01-04",
-            "DepartureDate": "2022-01-11",
-            "TotalPrice": 700
-        }
+
     ]
 }

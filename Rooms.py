@@ -59,6 +59,7 @@ class Rooms:
         self.temp["Rooms"].append(data)
         with open(filename, "w") as f:
             json.dump(self.temp, f, indent=4)
+        return True
 
     # def Book_room(self):
     #     self.load_rooms()

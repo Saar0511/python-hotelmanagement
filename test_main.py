@@ -1,6 +1,6 @@
 import unittest
 import json
-from main import Rooms
+from mainAi import Rooms
 
 class TestMain(unittest.TestCase):
     def test_add_room(self):

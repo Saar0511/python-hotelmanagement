@@ -1,52 +1,43 @@
 import unittest
+from Rooms import Rooms
 
 
-class TestRoomsMethods(unittest.TestCase):
+class TestRooms(unittest.TestCase):
+
     def setUp(self):
+        self.room1 = Rooms(size="22mr", capacity=10,
+                           numberOfBeds=2, Type='Basic', price=100)
+        self.room2 = Rooms(size="26mr", capacity=10,
+                           numberOfBeds=2, Type='Deluxe', price=200)
+        self.room3 = Rooms(size="30mr", capacity=10,
+                           numberOfBeds=4, Type='Suite', price=300)
+
+    def test_add_room(self):
+        self.room1.Add_room()
+        self.room2.Add_room()
+        self.room3.Add_room()
+
+    def test_display_all_rooms(self):
+        Room = Rooms.display_All_Rooms()
+        for R in Room:
+                ID = R[0]
+                Size = R[1]
+                Capacity = R[2]
+                NumberOfBeds = R[3]
+                Type = R[4]
+                Price = R[5]
+                print(f"Room Number: {ID}")
+                print(f"Size Of The Room is: {Size}")
+                print(f"Room type: {Type}")
+                print(f"Capacity: {Capacity}")
+                print(f"NumberOfBeds: {NumberOfBeds}")
+                print(f"Price: {Price}\n\n\n")
+                print("")
+            
 
 
-        self.room = Rooms(size=20, capacity=2, numberOfBeds=1, Type='Basic', price=30)
-        self.booking = {
-        "CustID": 1,
-        "RoomID": 1,
-        "ArrivalDate": "2022-01-01",
-        "DepartureDate": "2022-01-03",
-        "TotalPrice": 90
-        }
-
-
-def test_load_rooms(self):
-    self.room.load_rooms()
-    self.assertIsNotNone(self.room.temp)
-
-
-def test_set_min_booking_time(self):
-    self.assertEqual(self.room.set_min_booking_time(), 1)
-
-
-def test_display_all_rooms(self):
-    self.assertIsNotNone(self.room.display_All_Rooms())
-
-
-def test_add_room(self):
-    self.room.Add_room()
-    with open(filename, "r") as f:
-        temp = json.load(f)
-        self.assertEqual(len(temp["Rooms"]), 1)
-
-
-def test_book_room(self):
-    self.room.Book_room()
-    with open(filename, "r") as f:
-        temp = json.load(f)
-        self.assertEqual(temp["Booking"][0], self.booking)
-
-
-def test_room_by_type(self):
-    self.room.RoomByType()
-    with open(filename, "r") as f:
-        temp = json.load(f)
-        self.assertEqual(temp["Rooms"][0]["Type"], 'Basic')
+    def test_room_by_type(self):
+        Rooms.RoomByType()
 
 
 if __name__ == '__main__':
